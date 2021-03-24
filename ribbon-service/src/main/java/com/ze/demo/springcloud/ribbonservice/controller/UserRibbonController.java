@@ -31,8 +31,7 @@ public class UserRibbonController {
 
     @GetMapping("/getByUsername")
     public Result getByUsername(@RequestParam String username) {
-        String string =restTemplate.getForObject(userServiceUrl + "/user/getByUsername?username={1}", String.class, username);
-        return new Result();
+        return restTemplate.getForObject(userServiceUrl + "/user/getByUsername?username={1}", Result.class, username);
     }
 
     @GetMapping("/getEntityByUsername")
